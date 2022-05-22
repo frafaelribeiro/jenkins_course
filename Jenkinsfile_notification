@@ -18,18 +18,18 @@ pipeline {
             }
         }
     }
+    // post {
+    //     always {
+    //         emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test',
+    //     }
+    // }    
     post {
         always {
-            emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test'
-        }
-    }    
-    // post {
-    //     success {
-    //         emailext(
-    //             subject: "${env.JOB_NAME} na build [${env.BUILD_NUMBER}] foi deployado com sucesso :D",
-    //             body: "Verifique a saída da console do Job ${env.JOB_NAME} em [${env.BUILD_URL}] ",
-    //             to: "f.rafaelribeiro@gmail.com"
-    //         )
-    //     }   
-    // }
+            emailext(
+                subject: "${env.JOB_NAME} na build [${env.BUILD_NUMBER}] foi deployado com sucesso :D",
+                body: "Verifique a saída da console do Job ${env.JOB_NAME} em [${env.BUILD_URL}] ",
+                to: "f.rafaelribeiro@gmail.com"
+            )
+        }   
+    }
 } 
