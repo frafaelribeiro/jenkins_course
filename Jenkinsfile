@@ -6,7 +6,17 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
+                script{
+                    sh "echo 'iniciando build ..."
+                    sh '''
+                        printf "Building feito!"
+                    '''
+                }
+            }
+            dir(){
+                script{
+                    sh "zip ./teste.zip . -r"
+                }
             }
         }
         stage('Test') {
