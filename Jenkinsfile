@@ -15,7 +15,7 @@ pipeline {
                 }
                 dir("${env.WORKSPACE}"){
                     script{
-                        sh "zip -r ./teste.zip . -x ./.git"
+                        sh "zip -r ./teste.zip . -x .git"
                     }
                 }
             }
