@@ -12,10 +12,12 @@ pipeline {
                         printf "Building \
                         feito!"
                         '''
-                }                
-                script{
-                    sh "zip ./teste.zip . -r"
-                }                
+                }
+                dir("${env.WORKSPACE}"){
+                    script{
+                        sh "zip -r ./teste.zip . -x ./.git"
+                    }
+                }
             }
         }
         stage('Test') {
