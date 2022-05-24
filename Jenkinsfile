@@ -9,7 +9,8 @@ pipeline {
                 script{
                     sh "echo 'iniciando build ..."
                     sh  '''
-                        printf "Building feito!"
+                        printf "Building \
+                        feito !"
                         '''
                 }
                 dir("${env.WORKSPACE}"){
