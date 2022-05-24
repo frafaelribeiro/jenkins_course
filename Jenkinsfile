@@ -13,7 +13,7 @@ pipeline {
                     '''
                 }
             }
-            dir(){
+            dir("${env.WORKSPACE}"){
                 script{
                     sh "zip ./teste.zip . -r"
                 }
