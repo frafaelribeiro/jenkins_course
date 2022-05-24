@@ -12,7 +12,7 @@ pipeline {
                         printf "Building feito!"
                     '''
                 }
-                dir(){
+                dir("${env.WORKSPACE}"){
                     script{
                         sh "zip ./teste.zip . -r"
                     }
